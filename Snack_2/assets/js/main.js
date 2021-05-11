@@ -61,18 +61,18 @@ const squadre = [
         falliSubiti: 0
     }
 ];
-
+var nomeSquadre = [];
 for (let i = 0; i < squadre.length; i++) {
     let squadra = squadre[i];
     let { puntiFatti, falliSubiti } = squadra;
     squadra.puntiFatti = randomNumber(1, 100);
     squadra.falliSubiti = randomNumber(1, 300);
+
+    let elemento = [];
+    elemento.push(squadra.nome, squadra.falliSubiti)
+    nomeSquadre.push(elemento)
+
 }
 console.log(squadre);
-
-const datiSquadre = { ...squadre };
-console.log(datiSquadre);
-
-
-
+console.log(nomeSquadre);
 
