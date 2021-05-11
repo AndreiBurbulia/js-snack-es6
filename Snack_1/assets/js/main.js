@@ -42,7 +42,6 @@ for (let i = 0; i < bici.length; i++) {
     let { peso } = bici[i];
     if (peso < biciLeggera) {
         biciLeggera = peso;
-        console.log(bici[i]);
         document.getElementById("nome").innerHTML =
             `
         <p>Il nome della bicicletta piu leggera è ${bici[i].nome}</p>
