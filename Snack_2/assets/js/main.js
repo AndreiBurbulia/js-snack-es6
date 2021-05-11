@@ -61,13 +61,22 @@ const squadre = [
         falliSubiti: 0
     }
 ];
-var nomeSquadre = [];
+
+
+const nomeSquadre = []; // se uso const e comunque visibile all'interno del ciclo for siccome lo dichiarata fuori e sara utilizzabile da qui in giu
+
+//uso un ciclo per andare a prendere ogni singolo oggetto e poi aggiungerli i due valori che mi servono
 for (let i = 0; i < squadre.length; i++) {
-    let squadra = squadre[i];
+    let squadra = squadre[i];  // questa variabile con let non posso vederla al di fuori del ciclo
+    //vado a prendere i due valori chiave da ogni oggetto
     let { puntiFatti, falliSubiti } = squadra;
+
+    //vado a modificare i due valori dentro all'oggetto
     squadra.puntiFatti = randomNumber(1, 100);
     squadra.falliSubiti = randomNumber(1, 300);
 
+    //creo un array temporaneo in cui mettere i due elementi che mi servono
+    //e poi inserisco l'array temporaneo in un array esterno con tutti gli array che mi servono
     let elemento = [];
     elemento.push(squadra.nome, squadra.falliSubiti)
     nomeSquadre.push(elemento)
