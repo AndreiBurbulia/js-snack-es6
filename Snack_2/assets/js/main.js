@@ -85,3 +85,15 @@ for (let i = 0; i < squadre.length; i++) {
 console.log(squadre);
 console.log(nomeSquadre);
 
+
+
+/*
+const array2 = [...squadre];  //per copiare un array devo usare le quadre e i 3 puntini
+console.log(array2);
+
+for (let i = 0; i < array2.length; i++) {
+    let el = array2[i];
+    console.log(el.nome);
+}
+
+*/
