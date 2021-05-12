@@ -4,35 +4,35 @@ La funzione ritornerà un nuovo array con i valori che hanno la posizione compre
 
 */
 
-//creo un array in cui vado a inserire dei numeri con un ciclo per poter decidere quanti numeri
-const arrayNumeri = [];
 
-for (let i = 0; i < 10; i++) {
-    arrayNumeri.push(i)
-}
-
-console.log(arrayNumeri);
+const arrayRandom = [4, 88, 23, 55, 97, 13, 45, 87, 35, 65, 26, 11, 0, 99, 111]
+console.log(arrayRandom);
 
 //inizzializo le variabili che poi mi servono
-let min = 2, max = 10;
+let min = 5, max = 12;
 
-
-//funzione con il metodo filter che mi va ad analizzare l'index degli elementi 
-function intervalloArray(arrayList, min, max) {
-    if (min <= max && max <= arrayList.length) {
-        const intervalloArray = arrayNumeri.filter((index) => {
+//funzione che va a controllare l'index dell'elemento e lo stampa in un nuovo array se l'index e nei limiti
+function TraDueNumeri(listArray, min, max) {
+    const arrayVuoto = [];
+    if (min <= max && max <= (listArray.length - 1)) {
+        listArray.forEach((elemento, index) => {
             if (index >= min && index <= max) {
-                return true;
+                arrayVuoto.push(elemento)
             }
-            return false;
         })
-        return intervalloArray;
-
-    } else {
-        return "Condizioni non rispetate"
+        return arrayVuoto;
+    } else { //se i limiti sono sbagliati lo comunico 
+        return "Condizioni non rispetate!!"
     }
 }
 
-const arrayCorto = intervalloArray(arrayNumeri, min, max);
-console.log(arrayCorto);
+//Prova funzione con numeri
+const provaFunz = TraDueNumeri(arrayRandom, min, max);
+console.log(provaFunz);
 
+
+//Prova funzione con stringhe
+const arrayNomi = ["Andrei", "Verdi", "Marta", "Elena", "Marian", "Adrian", "Monica", "Luca", "Cristina", "Marco", "Mirza", "Alexandra", "Daive"];
+
+const nomiCorto = TraDueNumeri(arrayNomi, min, max);
+console.log(nomiCorto);
